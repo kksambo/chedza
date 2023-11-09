@@ -63,6 +63,7 @@ document.write("<div class='container'><h1 class='text-center my-4'>BEAUTY BOUTI
   }
 
   function displaySelectedImages() {
+	   const imagePath = 'chedza/kk/';
     const selectedImages = document.querySelectorAll('input[type="checkbox"]:checked');
     const selectedImagePaths = Array.from(selectedImages).map(checkbox => imagePath + checkbox.value);
 document.write("<div class='container'><h1 class='text-center my-4'>your cart</h1><div class='row'>");
