@@ -37,7 +37,7 @@
 
 <script>
   // Replace 'path/to/your/images/folder' with the actual path to your images folder
-  //const imagePath = 'C:/Users/ERC/Desktop/kk/';
+  const imagePath = 'chedza/kk/';
 
   // Replace 'jpg' with the file extension of your images
   const imageFiles = ['-one.jpeg', '-one.jpeg', '-one.jpeg', '-one.jpeg', '-one.jpeg']; // Add more images as needed
@@ -50,7 +50,7 @@ document.write("<div class='container'><h1 class='text-center my-4'>BEAUTY BOUTI
     imageFiles.forEach((image) => {
 
 	 document.write("<div class='col-lg-4 col-md-6 col-sm-12 mb-4'>"+"<div class='card' id='forimg'>"+
-	 "<img src='"+image+"' class='card-img-top' alt='Clothing'>"+
+	 "<img src='"+imagePath+image+"' class='card-img-top' alt='Clothing'>"+
 	 "<div class='card-body'>"+"<h5 class='card-title'>Stylish T-Shirt</h5>"+
                     "<p class='card-text'>A comfortable and stylish t-shirt for any occasion.</p>"+
                     "<p class='card-text'>R24.99</p>"+"<lable>ADD TO CART</lable>" + "<input type='checkbox' value='"+image+"' id=value='"+image+"'/>"+"</div></div></div>"
