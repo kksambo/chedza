@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Clothing Shop</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+  
+  <style>
+  input[type="checkbox"]{
+  
+  
+  width:50px;
+  height:50px;
+  
+  }
+
+
+	body{
+	
+	
+	
+	background-color: #C21460;
+	
+	}
+	
+	
+  
+  </style>
+</head>
+<body>
+
+
+
+<script>
+  // Replace 'path/to/your/images/folder' with the actual path to your images folder
+  const imagePath = 'C:/Users/ERC/Desktop/kk/';
+
+  // Replace 'jpg' with the file extension of your images
+  const imageFiles = ['-one.jpeg', 'two.png','-one.jpeg', 'two.png']; // Add more images as needed
+document.write("<div class='container'><h1 class='text-center my-4'>BEAUTY BOUTIQUE</h1><div class='row'>");
+	
+	
+  function displayImages() {
+    const gallery = document.getElementById('forimg');
+
+    imageFiles.forEach((image) => {
+
+	 document.write("<div class='col-lg-4 col-md-6 col-sm-12 mb-4'>"+"<div class='card' id='forimg'>"+
+	 "<img src='"+imagePath + image+"' class='card-img-top' alt='Clothing'>"+
+	 "<div class='card-body'>"+"<h5 class='card-title'>Stylish T-Shirt</h5>"+
+                    "<p class='card-text'>A comfortable and stylish t-shirt for any occasion.</p>"+
+                    "<p class='card-text'>R24.99</p>"+"<lable>ADD TO CART</lable>" + "<input type='checkbox' value='"+image+"' id=value='"+image+"'/>"+"</div></div></div>"
+					);
+					
+					
+  
+    });
+	document.write("</div></div>");
+  }
+
+  function displaySelectedImages() {
+    const selectedImages = document.querySelectorAll('input[type="checkbox"]:checked');
+    const selectedImagePaths = Array.from(selectedImages).map(checkbox => imagePath + checkbox.value);
+document.write("<div class='container'><h1 class='text-center my-4'>your cart</h1><div class='row'>");
+	
+    // You can customize the display of selected images here, for simplicity,
+    selectedImagePaths.forEach((image) => {
+
+	 document.write("<div class='col-lg-4 col-md-6 col-sm-12 mb-4'>"+"<div class='card' id='forimg'>"+
+	 "<img src='"+image+"' class='card-img-top' alt='Clothing'>"+
+	 "<div class='card-body'>"+"<h5 class='card-title'>Stylish T-Shirt</h5>"+
+                    "<p class='card-text'>A comfortable and stylish t-shirt for any occasion.</p>"+
+                    "<p class='card-text'>R24.99</p>"+"</div></div></div>"
+					);
+					
+					
+
+    });
+	document.write("</div></div>");
+    console.log('Selected Images:', selectedImagePaths);
+  }
+
+  // Call the function to display images
+  displayImages();
+</script>
+<button onclick="displaySelectedImages()">viewCart</button>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
