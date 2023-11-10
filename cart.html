@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Clothing Shop</title>
+    <!-- Include Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  
+  <style>
+  input[type="checkbox"]{
+  
+  
+  width:50px;
+  height:50px;
+  
+  }
+
+
+	body{
+	
+	
+	
+	background-color: #C21460;
+	
+	}
+	
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 15px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+.button1 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:#FFFFFF ;
+  border: none;
+  color:  #f4511e;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  float: right;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 15px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+h1 { 
+	color: white; 
+	font-family:  "Great Vibes", cursive;
+		
+	font-size: 36px;
+	font-weight: 400; 
+	font-style: italic; 
+	line-height: 44px; 
+	margin: 0 0 12px; 
+	text-align: center; 
+}
+
+	  
+  </style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li style="float:right"><a href="#about">About</a></li>
+</ul>
+
+<script>
+  // Replace 'path/to/your/images/folder' with the actual path to your images folder
+  const imagePath = 'chedza/kk/';
+
+  // Replace 'jpg' with the file extension of your images
+  const imageFiles = ['-one.jpeg', 'three.jpeg', 'four.jpeg']; // Add more images as needed
+document.write("<div class='container'><h1 class='text-center my-4'>YourCart #STYLEHUB</h1><div class='row'>");
+	const storedArray = JSON.parse(sessionStorage.getItem('myArray'));
+	
+  function displayImages() {
+    const gallery = document.getElementById('forimg');
+
+    storedArray.forEach((image) => {
+
+	 document.write("<div class='col-lg-4 col-md-6 col-sm-12 mb-4'>"+"<div class='card' id='forimg'>"+
+	 "<img src='"+image+"' class='card-img-top' alt='Clothing'>"+
+	 "<div class='card-body'>"+"<h5 class='card-title'>Stylish T-Shirt</h5>"+
+                    "<p class='card-text'>A comfortable and stylish t-shirt for any occasion.</p>"+
+                    "<p class='card-text'>R24.99</p>"+"<lable>ADD TO CART</lable>" + "<input type='checkbox' value='"+image+"' id=value='"+image+"'/>"+
+			"<button class='button' onclick='displaySelectedImages()' style='vertical-align:middle'><span>viewCart</span></button>"+"</div></div></div>");
+					
+					
+  
+    });
+	document.write("</div></div>");
+	alert(storedArray);
+  }
+
+
+
+  // Call the function to display images
+  displayImages();
+</script>
+<button class='button1' style='vertical-align:middle'><span>CheckOut</span></button>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
