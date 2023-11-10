@@ -3,7 +3,7 @@
 <head>
  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Clothing Shop</title>
+    <title>STYLEHUB</title>
     <!-- Include Bootstrap CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -137,6 +137,7 @@ document.write("<div class='container'><h1 class='text-center my-4'>Welcome to S
 	
 	
   function displayImages() {
+
     const gallery = document.getElementById('forimg');
 
     imageFiles.forEach((image) => {
@@ -152,34 +153,25 @@ document.write("<div class='container'><h1 class='text-center my-4'>Welcome to S
   
     });
 	document.write("</div></div>");
+	
+	
   }
+
 
   function displaySelectedImages() {
     const selectedImages = document.querySelectorAll('input[type="checkbox"]:checked');
     const selectedImagePaths = Array.from(selectedImages).map(checkbox =>checkbox.value);
-document.write("<div class='container'><h1 class='text-center my-4'>your cart</h1><div class='row'>");
+
 	
     // You can customize the display of selected images here, for simplicity,
-    selectedImagePaths.forEach((image) => {
-
-	 document.write("<div class='col-lg-4 col-md-6 col-sm-12 mb-4'>"+"<div class='card' id='forimg'>"+
-	 "<img src='"+image+"' class='card-img-top' alt='Clothing' height='70%' width='60%'>"+
-	 "<div class='card-body'>"+"<h5 class='card-title'>Stylish T-Shirt</h5>"+
-                    "<p class='card-text'>A comfortable and stylish t-shirt for any occasion.</p>"+
-                    "<p class='card-text'>R24.99</p>"+"</div></div></div>"
-					);
-					
-					
-
-    });
-	document.write("</div></div>");
+	sessionStorage.setItem('myArray', JSON.stringify(selectedImagePaths));
+window.location.href = 'cart.html';
     console.log('Selected Images:', selectedImagePaths);
   }
-
   // Call the function to display images
   displayImages();
 </script>
-<button onclick="displaySelectedImages()">viewCart</button>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
