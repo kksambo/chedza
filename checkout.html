@@ -190,18 +190,22 @@ height:100px;
       </form>
     </div>
   </div>
-  <div class="col-25">
-    <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-      <p><img src="-one.jpeg"/></a> <span class="price">R15</span></p>
-      <p><a href="#">Product 2</a> <span class="price">R5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">R8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">R2</span></p>
-      <hr>
-      <p>Total <span class="price" style="color:black"><b>R30</b></span></p>
-    </div>
+  <div class="col-25" id="cart">
+
   </div>
 </div>
+<script>
+function cart(){
 
+  document.getElementById("cart").innerHTML= "<div class='container'>"+
+      "<h4>Cart <span class='price' style='color:black'><i class='fa fa-shopping-cart'></i> <b>4</b></span></h4>"+
+      "<p><img src='-one.jpeg'/></a> <span class='price'>R15</span></p>"+
+      "<hr>"+
+      "<p>Total <span class='price' style='color:black'><b>R30</b></span></p>"+
+    "</div>";
+
+  }
+  cart();
+</script>
 </body>
 </html>
