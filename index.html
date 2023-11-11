@@ -161,7 +161,7 @@ document.write("<div class='container'><h1 class='text-center my-4'>Welcome to S
 	 "<div class='card-body'>"+"<h5 class='card-title'>Stylish T-Shirt</h5>"+
                     "<p class='card-text'>A comfortable and stylish t-shirt for any occasion.</p>"+
                     "<p class='card-text'>R24.99</p>"+
-			"<select><option>size</option><option>small</option><option>mid</option><option>large</option></select><br/>"+
+			"<select id='"+image+"'><option>size</option><option>small</option><option>mid</option><option>large</option></select><br/>"+
 			"<lable>ADD TO CART</lable>" + "<input type='checkbox' value='"+image+"' id=value='"+image+"'/>"+
 			"<button class='button' onclick='displaySelectedImages()' style='vertical-align:middle'><span>viewCart</span></button>"+"</div></div></div>");
 					
@@ -175,14 +175,24 @@ document.write("<div class='container'><h1 class='text-center my-4'>Welcome to S
 
 
   function displaySelectedImages() {
+const sizes = document.querySelectorAll('select');
     const selectedImages = document.querySelectorAll('input[type="checkbox"]:checked');
     const selectedImagePaths = Array.from(selectedImages).map(checkbox =>checkbox.value);
+const sizes = [];
 
+for(var i=0; i< selectedImagePaths.length; i++){
+
+var select = document.getElementById(selectedImagePaths[i]).value;
+sizes.push(select);
+
+
+}
 	
-    // You can customize the display of selected images here, for simplicity,
-	sessionStorage.setItem('myArray', JSON.stringify(selectedImagePaths));
+  
+sessionStorage.setItem('myArray', JSON.stringify(selectedImagePaths));
 window.location.href = 'cart.html';
     console.log('Selected Images:', selectedImagePaths);
+console.log('Sizes:', sizes);
   }
   // Call the function to display images
   displayImages();
