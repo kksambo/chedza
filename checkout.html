@@ -196,11 +196,22 @@ height:100px;
 </div>
 <script>
 function cart(){
-
+const storedArray = JSON.parse(sessionStorage.getItem('myArray'));
   document.getElementById("cart").innerHTML= "<div class='container'>"+
       "<h4>Cart <span class='price' style='color:black'><i class='fa fa-shopping-cart'></i> <b>4</b></span></h4>";
-      "<p><img src='-one.jpeg'/></a> <span class='price'>R15</span></p>"+
+      
 
+	
+	
+
+
+    storedArray.forEach((image) => {
+
+document.getElementById("cart").innerHTML += "<p><img src='"image"'/></a> <span class='price'>R15</span></p>";
+					
+					
+  
+    });
 
 
 
