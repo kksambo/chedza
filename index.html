@@ -175,7 +175,7 @@ document.write("<div class='container'><h1 class='text-center my-4'>Welcome to S
 
 
   function displaySelectedImages() {
-const sizes = document.querySelectorAll('select');
+
     const selectedImages = document.querySelectorAll('input[type="checkbox"]:checked');
     const selectedImagePaths = Array.from(selectedImages).map(checkbox =>checkbox.value);
 const sizes = [];
