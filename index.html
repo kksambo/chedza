@@ -118,7 +118,18 @@ h1 {
 	text-align: center; 
 }
 
-	  
+select {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}	  
   </style>
 </head>
 <body>
@@ -149,7 +160,9 @@ document.write("<div class='container'><h1 class='text-center my-4'>Welcome to S
 	 "<img src='"+image+"' class='card-img-top' alt='Clothing'>"+
 	 "<div class='card-body'>"+"<h5 class='card-title'>Stylish T-Shirt</h5>"+
                     "<p class='card-text'>A comfortable and stylish t-shirt for any occasion.</p>"+
-                    "<p class='card-text'>R24.99</p>"+"<lable>ADD TO CART</lable>" + "<input type='checkbox' value='"+image+"' id=value='"+image+"'/>"+
+                    "<p class='card-text'>R24.99</p>"+
+			"<select><option>size</option><option>small</option><option>mid</option><option>large</option></select>"+
+			"<lable>ADD TO CART</lable>" + "<input type='checkbox' value='"+image+"' id=value='"+image+"'/>"+
 			"<button class='button' onclick='displaySelectedImages()' style='vertical-align:middle'><span>viewCart</span></button>"+"</div></div></div>");
 					
 					
